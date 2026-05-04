@@ -10,7 +10,7 @@ def index():
     pod_ip = socket.gethostbyname(pod_name)
     
     app_version = os.getenv("APP_VERSION", "v1.0")
-    bg_color = os.getenv("APP_COLOR", "#f0f2f5")  # Default siva
+    bg_color = os.getenv("APP_COLOR", "#f0f2f5")  
     db_password = os.getenv("DB_PASSWORD", "NIJE PODEŠENO")
 
     html_template = """
@@ -34,9 +34,9 @@ def index():
             <div class="version">Verzija: {{ app_version }}</div>
             
             <div class="info">
-                <p><strong>📍 Pod Hostname:</strong> <br> {{ pod_name }}</p>
-                <p><strong>🌐 Pod IP:</strong> {{ pod_ip }}</p>
-                <p><strong>🔐 DB Password:</strong> <span class="status">{{ db_password }}</span></p>
+                <p><strong>Pod Hostname:</strong> <br> {{ pod_name }}</p>
+                <p><strong>Pod IP:</strong> {{ pod_ip }}</p>
+                <p><strong>DB Password:</strong> <span class="status">{{ db_password }}</span></p>
             </div>
             <p style="font-size: 0.8em; color: #666; margin-top: 20px;">Osvežite stranicu (F5) da vidite Load Balancing</p>
         </div>

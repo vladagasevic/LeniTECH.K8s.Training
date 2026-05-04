@@ -1,4 +1,4 @@
-# 1. Uzimamo minimalni Python image (manji image = veća bezbednost i brzina)
+
 FROM python:3.9-alpine
 
 WORKDIR /app
