@@ -1,0 +1,19 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: moj-ingress
+  annotations:
+    # Okoristi Nginx Ingress kontroler
+    kubernetes.io/ingress.class: nginx
+spec:
+  rules:
+  - host: localhost.local 
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: moj-service 
+            port:
+              number: 80 

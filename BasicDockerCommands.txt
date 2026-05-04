@@ -1,0 +1,38 @@
+# preuzimanje izvornih fajlova
+git clone git@github.com:vladagasevic/LeniTECH.K8s.Training.git
+
+# izrada image-a
+docker build -t ime-image .
+
+#pokretanje kontejnera na osnovu prethodno kreiranog image-a
+docker run -d -p 5001:5000 --name ime-kontejnera ime-imagea
+
+# prikazivanje liste kontejnera
+docker ps -a
+
+# komande za pokretanje / stopiranje kontejnera
+docker start ime-kontejnera / docker stop ime-kontejnera
+
+# pregled logova kontejnera
+docker logs ime-kontejnera
+
+# pregled logova live
+docker logs -f ime-kontejnera (live)
+
+# pregled logova live ali poslednjih 50 reda
+docker logs -f --tail 50 ime-kontejnera
+
+# ulazak u kontejner u sh ili bash konzolu
+docker exec -it ime-kontejnera sh (bash)
+
+# stopiranje kontejnera
+docker stop ime-kontejnera
+
+# brisanje kontejnera
+docker rm ime-kontejnera
+
+# brisanje image-a
+docker rmi ime-image 
+
+# brisanje svega
+docker system prune

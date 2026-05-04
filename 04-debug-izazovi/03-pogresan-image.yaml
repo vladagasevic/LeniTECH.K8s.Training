@@ -1,0 +1,18 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: greska-image
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: web-image
+  template:
+    metadata:
+      labels:
+        app: web-image
+    spec:
+      containers:
+      - name: web-app
+        # GRESKA: Slika ili tag ne postoje (npr. 'v11' umesto 'v1' ili pogrešan naziv)
+        image: ngnx:alpine
