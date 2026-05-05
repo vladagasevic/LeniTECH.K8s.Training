@@ -1,0 +1,10 @@
+minikube start --driver=docker
+Kreirati pomocu Namespace Config fajla novi Namespace: Monitoring
+minikube addons enable ingress
+OpenLens > NewTab > Terminal
+helm repo add prometheus-community https://prometheus-community.github.io/helm-charts 
+helm repo update
+helm install moj-monitor prometheus-community/kube-prometheus-stack --namespace monitoring
+OpenLens > Namespaces > Select monitoring namespace 
+OpenLens > Network > Services > moj-monitor-grafana > PortForward
+OpenLens > Secrets >  moj-monitor-grafana -> admin pass
