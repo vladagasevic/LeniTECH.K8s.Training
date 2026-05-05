@@ -23,20 +23,26 @@ spec:
       - name: treningapp
         image: vlajko83/treningapp:v3
         imagePullPolicy: Always
+        # env:
         # - name: WELCOME_MSG         
         #   valueFrom:
-        #     config_map_key_ref:
+        #     configMapKeyRef:
         #       name: moj-prvi-config
         #       key: WELCOME_MSG
         # - name: APP_COLOR          
         #   valueFrom:
-        #     config_map_key_ref:
+        #     configMapKeyRef:
         #       name: moj-prvi-config
         #       key: APP_COLOR
         # - name: APP_VERSION       
         #   valueFrom:
-        #     config_map_key_ref:
+        #     configMapKeyRef:
         #       name: moj-prvi-config
         #       key: APP_VERSION
+        # - name: LOZINKA_BAZE
+        #   valueFrom:
+        #     secretKeyRef:
+        #       name: moj-prvi-secret
+        #       key: DB_PASSWORD
         ports:
         - containerPort: 5000
