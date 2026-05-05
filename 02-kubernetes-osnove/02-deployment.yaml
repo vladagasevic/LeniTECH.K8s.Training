@@ -20,7 +20,8 @@ spec:
         app: training
     spec:
       containers:
-      - name: nginx
-        image: nginx:alpine
+      - name: treningapp
+        image: vlajko83/treningapp:v1
+        imagePullPolicy: Always
         ports:
-        - containerPort: 80
+        - containerPort: 5000
