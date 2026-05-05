@@ -4,6 +4,13 @@ metadata:
   name: moj-prvi-deployment
 spec:
   replicas: 3
+
+  # strategy:
+  #   type: RollingUpdate
+  #   rollingUpdate:
+  #     maxUnavailable: 2
+  #     maxSurge: 2
+
   selector:
     matchLabels:
       app: training
