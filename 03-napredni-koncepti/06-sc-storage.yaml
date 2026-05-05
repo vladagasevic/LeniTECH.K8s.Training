@@ -1,0 +1,7 @@
+apiVersion: storage.k8s.io/v1
+kind: StorageClass
+metadata:
+  name: lenitech-fast-storage
+provisioner: k8s.io/minikube-hostpath # Ovde mu kažeš KO pravi disk
+reclaimPolicy: Delete                # Šta se desi sa PV kad obrišeš PVC
+allowVolumeExpansion: true           # Dozvoljavaš li naknadno proširenje diska?

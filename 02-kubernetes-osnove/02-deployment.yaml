@@ -44,5 +44,9 @@ spec:
         #     secretKeyRef:
         #       name: moj-prvi-secret
         #       key: DB_PASSWORD
+      # volumes:
+      # - name: storage-podaci
+      #   persistentVolumeClaim:
+      #     claimName: moj-prvi-pvc
         ports:
         - containerPort: 5000
