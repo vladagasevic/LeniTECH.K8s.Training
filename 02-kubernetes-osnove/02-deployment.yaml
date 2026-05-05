@@ -21,7 +21,7 @@ spec:
     spec:
       containers:
       - name: treningapp
-        image: vlajko83/treningapp:v1
+        image: vlajko83/treningapp:v2
         imagePullPolicy: Always
         ports:
         - containerPort: 5000
