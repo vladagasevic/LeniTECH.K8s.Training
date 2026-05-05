@@ -12,6 +12,7 @@ def index():
     app_version = os.getenv("APP_VERSION", "v1.0")
     bg_color = os.getenv("APP_COLOR", "#f0f2f5")  
     db_password = os.getenv("DB_PASSWORD", "NIJE PODEŠENO")
+    welcome_msg = os.getenv('WELCOME_MSG', 'Default dobrodošlica')
 
     html_template = """
     <!DOCTYPE html>
@@ -49,7 +50,8 @@ def index():
                                  pod_ip=pod_ip, 
                                  app_version=app_version, 
                                  bg_color=bg_color, 
-                                 db_password=db_password)
+                                 db_password=db_password,
+                                 welcome_message=welcome_msg)
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000, threaded=True)
