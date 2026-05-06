@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: moj-prvi-deployment
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: training
+  template:
+    metadata:
+      labels:
+        app: training
+    spec:
+      containers:
+      - name: treningapp
+        image: nginx
+        ports:
+        - containerPort: 80
